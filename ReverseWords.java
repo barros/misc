@@ -16,6 +16,7 @@ class ReverseWords {
   }
 
   static void reverseWords(char[] vals) {
+    // using a stack will reverse the order of the words
     Stack<String> words = new Stack<>();
     retrieveWords(vals, words);
     StringBuilder res = new StringBuilder();
@@ -28,6 +29,7 @@ class ReverseWords {
     System.out.println(res.toString());
   }
 
+  // helper function to push all words to a stack
   static void retrieveWords(char[] vals, Stack<String> s) {
     StringBuilder word = new StringBuilder();
     for (char val: vals) {
