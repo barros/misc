@@ -42,7 +42,7 @@ class ReverseWords {
         word.append(val);
       }
     }
-    if (word.length()!=0) {
+    if (word.length() != 0) {
       s.push(word.toString());
     }
   }
