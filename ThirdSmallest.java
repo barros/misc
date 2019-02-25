@@ -1,15 +1,21 @@
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+//Given a Set of numbers, find and return the 3rd smallest number
 
 class ThirdSmallest {
   public static void main(String[] args) {
-    int[] input = {4, 1, 5, 2, 0, 8};
-    System.out.println(thirdSmallest(input));
+    HashSet<Integer> s = new HashSet<>(Arrays.asList(4, 1, 5, 2, 0, 8));
+    System.out.println(thirdSmallest(s));
+
   }
-  static int thirdSmallest(int[] input) {
-    if (input.length < 3) {
+  static int thirdSmallest(Set input) {
+    Object[] arr = input.toArray();
+    if (arr.length < 3) {
       return -1;
     }
-    Arrays.sort(input);
-    return input[2];
+    Arrays.sort(arr);
+    return (int) arr[2];
   }
 }
