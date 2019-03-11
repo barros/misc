@@ -11,14 +11,16 @@ to
 
 class ReverseWords {
   public static void main(String[] args) {
-    char[] test = {'p', 'e', 'r', 'f', 'e', 'c', 't', ' ', 'm', 'a', 'k', 'e', 's', ' ', 'p', 'r', 'a', 'c', 't', 'i', 'c', 'e'};
-    reverseWords(test);
+    String input = "perfect makes practice";
+    char[] input2 = {'p', 'e', 'r', 'f', 'e', 'c', 't', ' ', 'm', 'a', 'k', 'e', 's', ' ', 'p', 'r', 'a', 'c', 't', 'i', 'c', 'e'};
+    String reversed = reverseWords(input);
+    System.out.println(reversed);
   }
 
-  static void reverseWords(char[] vals) {
+  static String reverseWords(String input) {
     // using a stack will reverse the order of the words
     Stack<String> words = new Stack<>();
-    retrieveWords(vals, words);
+    retrieveWords(input.toCharArray(), words);
     StringBuilder res = new StringBuilder();
     if (!words.empty()) {
       res.append(words.pop());
@@ -26,7 +28,7 @@ class ReverseWords {
         res.append(" " + words.pop());
       }
     }
-    System.out.println(res.toString());
+    return res.toString();
   }
 
   // helper function to push all words to a stack
