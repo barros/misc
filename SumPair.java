@@ -51,6 +51,8 @@ class SumPair {
         }
 
         Tuple res = null;
+        // map to keep track of visited values (key: node integer, value: node position).
+        // the position is the first location the integer was located
         HashMap<Integer, Node> vals = new HashMap<Integer, Node>();
         Queue<Node> q = new LinkedList<Node>();
         q.add(root);
@@ -58,10 +60,12 @@ class SumPair {
         while (!q.isEmpty()) {
             Node current = q.remove();
             int difference = target - current.val;
+            // see if the difference has already been visited
             if (vals.containsKey(difference)) {
                 res = new Tuple(vals.get(difference), current);
                 break;
             }
+            // add node and value to the visited map 
             if (!vals.containsKey(current.val)) {
                 vals.put(current.val, current);
             }
