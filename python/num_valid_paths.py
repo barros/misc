@@ -6,7 +6,7 @@ Assume there will always be a 0 in the top left and bottom right corners.
 0 represents an empty space while 1 represents a cell you cannot walk through.
 Input:
 [[0, 1, 0],
- [0, 0, 1]
+ [0, 0, 1],
  [0, 0, 0]]
 
 Output:
@@ -44,7 +44,4 @@ def num_of_valid_paths(arr):
                 num_of_ways[i][j] = num_of_ways[i-1][j] + num_of_ways[i][j-1]
 
 
-    print(num_of_ways[m-1][n-1])
-
-
-num_of_valid_paths(arr)
+    return num_of_ways[m-1][n-1]
