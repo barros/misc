@@ -1,6 +1,7 @@
 """
-Given an n by m matrix of 0s and 1s,how many ways are there 
-to reach the bottom right corner from the top left?
+Given an n by m matrix of 0s and 1s, return the number of ways
+to reach the bottom right corner from the top left.
+Assume there will always be a 0 in the top left and bottom right corners.
 
 0 represents an empty space while 1 represents a cell you cannot walk through.
 Input:
